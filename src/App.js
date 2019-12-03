@@ -46,9 +46,9 @@ class App extends Component {
         ))}
         <Popup
           show={this.state.showAlert}
-          click={this.alertHandler}
-          type='danger'
-          dismiss
+          dismiss={this.alertHandler}
+          type='warning'
+          clickDismissable
         >
           <Button
             type='close'
@@ -74,6 +74,6 @@ class App extends Component {
       </Fragment>
     )
   }
-}
+};
 
 export default App;

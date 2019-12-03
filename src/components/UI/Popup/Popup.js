@@ -1,5 +1,5 @@
 import React from 'react';
-import './Popup.css'
+import './Popup.css';
 
 const Popup = props => {
   
@@ -9,16 +9,16 @@ const Popup = props => {
   props.type==='danger'&& (text='A simple danger alert!');
 
   return (
-    <div onClick={props.dismiss === undefined ? props.click : null} 
+    <div onClick={!props.clickDismissable ? props.dismiss : null} 
     className={`Alert ${['alert' , props.type].join('-')}`} 
     style={{
       transform: props.show ? 'translate(-50%, 0)' : 'translateY(-100vh)',
       opacity: props.show ? '1' : '0'
     }}>
       {text}
-      {props.dismiss && props.children}
+      {props.clickDismissable && props.children}
     </div>
   );
 }
-export default Popup;
 
+export default Popup;
